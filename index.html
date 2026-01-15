@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣空汙百年變遷圖表</title>
+    <style>
+        body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1000px; margin: auto; }
+       
+        /* 標題區 */
+        .header { text-align: center; margin-bottom: 30px; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; display: inline-block; padding-bottom: 5px; }
+
+
+        /* 四階段圖表佈局 */
+        .infographic { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+        .card { flex: 1; min-width: 200px; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 8px solid #ccc; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+       
+        /* 階段顏色 */
+        .stage-1 { border-color: #7f8c8d; } /* 灰色：煤煙 */
+        .stage-2 { border-color: #e74c3c; } /* 紅色：重污染 */
+        .stage-3 { border-color: #f39c12; } /* 橘色：抗爭 */
+        .stage-4 { border-color: #27ae60; } /* 綠色：淨零 */
+
+
+        .year { font-size: 0.85em; font-weight: bold; color: #7f8c8d; }
+        .title { font-size: 1.1em; font-weight: bold; margin: 10px 0; color: #2c3e50; }
+        .value { font-size: 2em; font-weight: 900; display: block; margin: 5px 0; }
+        .unit { font-size: 0.7em; color: #95a5a6; text-transform: uppercase; }
+        .desc { font-size: 0.85em; color: #636e72; margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px; }
+
+
+        /* 地點列表表格 */
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        th { background: #34495e; color: white; padding: 12px; text-align: left; font-size: 0.9em; }
+        td { padding: 12px; border-bottom: 1px solid #eee; font-size: 0.85em; }
+        tr:hover { background: #f9f9f9; }
+        .coord { font-family: monospace; color: #e67e22; background: #fdf2e9; padding: 2px 5px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="header">
+        <h2>台灣空氣品質百年變遷史 (1926-2025)</h2>
+        <p>從看得見的黑煙到看不見的微粒</p>
+    </div>
+
+
+    <div class="infographic">
+        <div class="card stage-1">
+            <div class="year">1926 - 1955</div>
+            <div class="title">工業萌芽期</div>
+            <span class="value">煤煙</span>
+            <span class="unit">核心污染源</span>
+            <div class="desc">日治至戰後初期，工廠集中於愛河兩側，無任何防治設備。</div>
+        </div>
+        <div class="card stage-2">
+            <div class="year">1960 - 1980</div>
+            <div class="title">污染巔峰期</div>
+            <span class="value">30+</span>
+            <span class="unit">公噸/km²/月 (落塵)</span>
+            <div class="desc">經濟奇蹟的代價，高雄黑煙蔽日，硫氧化物達到歷史頂峰。</div>
+        </div>
+        <div class="card stage-3">
+            <div class="year">1981 - 2005</div>
+            <div class="title">公害抗爭期</div>
+            <span class="value">↓ 80%</span>
+            <span class="unit">SO₂ 排放降幅</span>
+            <div class="desc">反公害運動爆發，政府成立環保署，開啟法制化監測。</div>
+        </div>
+        <div class="card stage-4">
+            <div class="year">2006 - 2025</div>
+            <div class="title">氣候戰場期</div>
+            <span class="value">13.0</span>
+            <span class="unit">μg/m³ (PM2.5)</span>
+            <div class="desc">轉向看不見的微粒，推動增氣減煤與 2050 淨零目標。</div>
+        </div>
+    </div>
+
+
+    <h3>關鍵工業與抗爭地點座標</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>歷史座標點</th>
+                <th>地理座標 (Lat, Lon)</th>
+                <th>類型 / 歷史意義</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>淺野水泥 (台泥高雄廠)</td>
+                <td><span class="coord">22.6433, 120.2745</span></td>
+                <td>早期工業：日治首座水泥廠</td>
+            </tr>
+            <tr>
+                <td>高雄煉油廠 (中油五輕)</td>
+                <td><span class="coord">22.7113, 120.3087</span></td>
+                <td>重大抗爭：1987 反五輕運動</td>
+            </tr>
+            <tr>
+                <td>林園石化工業區</td>
+                <td><span class="coord">22.4993, 120.4067</span></td>
+                <td>重大抗爭：1988 林園事件</td>
+            </tr>
+            <tr>
+                <td>李長榮化工 (新竹廠)</td>
+                <td><span class="coord">24.8074, 121.0020</span></td>
+                <td>重大抗爭：1986 圍廠 450 天</td>
+            </tr>
+            <tr>
+                <td>台中發電廠 (中火)</td>
+                <td><span class="coord">24.2129, 120.4811</span></td>
+                <td>當代議題：增氣減煤轉型熱點</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
+
